@@ -1,0 +1,78 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  /* padding: 30px; */
+  background-color: #152850;
+  min-height: 100vh;
+}
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  height: 80vh;
+  background-color: #e0eefe;
+  border-radius: 20px;
+}
+.website-logo-container {
+  background-color: #e0eefe;
+  padding: 30px;
+  width: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.website-log {
+  width: 100%;
+}
+.form-container {
+  background-color: #ffffff;
+  width: 100%;
+  width: 70%;
+  padding: 20px;
+  border-bottom: 100px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+.username-label {
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.pin-label {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.input-box {
+  padding: 10px;
+  margin-top: 5px;
+  border: solid 1px #c3cad9;
+  outline: none;
+}
+.error-msg {
+  color: red;
+}
+.login-btn {
+  margin-top: 40px;
+  background-color: #1565d8;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: 'Roboto';
+}
