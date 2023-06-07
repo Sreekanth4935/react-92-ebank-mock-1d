@@ -1,0 +1,34 @@
+.home-container {
+  background-color: #183b56;
+  min-height: 100vh;
+}
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.website-logo {
+  height: 50px;
+}
+.logout-btn {
+  background-color: transparent;
+  color: aliceblue;
+  border: solid 1px #fff;
+  padding: 5px;
+  width: 80px;
+  border-radius: 3px;
+}
+.visa-container {
+  color: #fff;
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.digital-card-img {
+  width: 50%;
+}

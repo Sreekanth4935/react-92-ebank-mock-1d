@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
@@ -35,9 +36,13 @@ class LoginForm extends Component {
     const response = await fetch('https://apis.ccbp.in/ebank/login', options)
     // console.log(response)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
+    const jwtToken = data.jwt_token
     if (response.ok) {
-      Cookies.set('jwtToken', data.jwt_token)
+      Cookies.set('jwt_token', jwtToken, {expires: 10})
+      //   console.log(this.props)
+      const {history} = this.props
+      history.replace('/')
     } else {
       this.setState({
         errorMsg: data.error_msg,
@@ -46,7 +51,12 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {userId, pin} = this.state
+    const {userId, pin, errorMsg} = this.state
+
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
 
     return (
       <div className="main-container">
@@ -77,13 +87,14 @@ class LoginForm extends Component {
                   onChange={this.savePin}
                   value={pin}
                   placeholder="Enter PIN"
-                  type="text"
+                  type="password"
                   className="input-box"
                 />
               </label>
               <button type="submit" className="login-btn">
                 Login
               </button>
+              {errorMsg && <p className="error-msg">{errorMsg}</p>}
             </form>
           </div>
         </div>
